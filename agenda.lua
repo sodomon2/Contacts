@@ -1,24 +1,18 @@
 #!/usr/bin/env lua5.1
 
---Lalibreria middleclassme da soporte a OOP
-require('lib.middleclass')
---En lib/funciones guardare todas las funciones generales
-funcion = require('lib.funciones')
--- Similar a funciones pero mas comun
-comun = require('lib.comun')
--- La super libreria para el acceso a sqlite
-db = require('lib.db')
--- La libreria que me permitirausar GTK
-local lgi = require 'lgi'
--- Parte de lgi
-local GObject = lgi.GObject
--- para el treeview
-local GLib = lgi.GLib
--- El objeto GTK
-local Gtk = lgi.require('Gtk', '3.0')
+require('lib.middleclass')                  --La libreria middleclassme da soporte a OOP
+funcion         = require('lib.funciones')  --En lib/funciones guardare todas las funciones generales
+comun           = require('lib.comun')      -- Similar a funciones pero mas comun
+db              = require('lib.db')         -- La super libreria para el acceso a sqlite
 
-local assert = lgi.assert
-local builder = Gtk.Builder()
+local lgi       = require 'lgi'             -- La libreria que me permitirausar GTK
+local GObject   = lgi.GObject               -- Parte de lgi
+local Gdk       = lgi.Gdk                   -- parte de lgi
+local GLib      = lgi.GLib                  -- para el treeview
+local Gtk       = lgi.require('Gtk', '3.0') -- El objeto GTK
+
+local assert    = lgi.assert
+local builder   = Gtk.Builder()
 
 assert(builder:add_from_file('vistas/agenda.ui'))
 local ui = builder.objects
@@ -26,15 +20,11 @@ local ui = builder.objects
 local login_window = ui.dialog_login
 local main_window = ui.main_window
 
--- Invoco el objeto btn_cancel de agenda.ui
-local btn_cancel = builder:get_object('btn_cancel')
--- Invoco el objeto btn_ok de agenda.ui
-local btn_ok = builder:get_object('btn_ok')
+local btn_cancel = builder:get_object('btn_cancel')   -- Invoco el objeto btn_cancel de agenda.ui
+local btn_ok = builder:get_object('btn_ok')           -- Invoco el objeto btn_ok de agenda.ui
 
--- Invoco el objeto entry_user de agenda.ui
-local input = builder:get_object('entry_user')
--- Invoco el objeto entry_password de agenda.ui
-local password = builder:get_object('entry_password')
+local input = builder:get_object('entry_user')        -- Invoco el objeto entry_user de agenda.ui
+local password = builder:get_object('entry_password') -- Invoco el objeto entry_password de agenda.ui
 
 function btn_ok:on_clicked()
 	db:open()
@@ -49,10 +39,8 @@ function btn_ok:on_clicked()
 	end
 end
 
--- Invoco el objeto btn_add de agenda.ui
-local btn_add = builder:get_object('btn_registrar')
--- Invoco el objeto btn_reset de agenda.ui
-local btn_reset = builder:get_object('btn_reset')
+local btn_add = builder:get_object('btn_registrar') -- Invoco el objeto btn_add de agenda.ui
+local btn_reset = builder:get_object('btn_reset')   -- Invoco el objeto btn_reset de agenda.ui
 
 local function poblar_lista()
 	db:open()
@@ -74,12 +62,9 @@ end
 
 poblar_lista()
 
--- Invoco el objeto entry_nombre de agenda.ui
-local input_nombre = builder:get_object('entry_nombre')
--- Invoco el objeto entry_password de agenda.ui
-local input_numero = builder:get_object('entry_numero')
--- Invoco el objeto entry_lugar de agenda.ui
-local input_lugar = builder:get_object('entry_lugar')
+local input_nombre = builder:get_object('entry_nombre') -- Invoco el objeto entry_nombre de agenda.ui
+local input_numero = builder:get_object('entry_numero') -- Invoco el objeto entry_password de agenda.ui
+local input_lugar = builder:get_object('entry_lugar')   -- Invoco el objeto entry_lugar de agenda.ui
 
 local function insert_data()
 	db:open()
