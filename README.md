@@ -19,6 +19,6 @@ Agenda  `cp -r lib/ vistas/ agenda.lua db.db /usr/share/agenda`
 
 Desktop `cp -u agenda.desktop /usr/share/applications `
 
-### Creditos
+### Contactos
 
 Gmail: sodomon2@gmail.com
