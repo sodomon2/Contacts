@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Registros de telefonos
-Type=Application
-Exec=lua5.3 agenda.lua
-Icon=system-config-users
-Categories=GTK;Office;
