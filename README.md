@@ -1,4 +1,4 @@
-#Agenda_Personal
+# Agenda_Personal
 
 Agenda para registro de telefonos en Lua GTK y Sqlite3
 
