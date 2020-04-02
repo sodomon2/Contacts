@@ -13,11 +13,11 @@ contraseña: admin
 
 2: Abrimos una consola root y ejecutamos los siguientes comandos
 
-Binario `cp -u agenda /usr/local/bin`
+Binario `cp -u agenda /usr/bin`
 
 Agenda  `cp -r lib/ vistas/ agenda.lua db.db /usr/share/agenda`
 
-Desktop `cp -u agenda.desktop /usr/share/applications `
+Desktop `cp -u agenda.desktop /usr/share/applications`
 
 ### Contactos
 
