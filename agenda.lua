@@ -64,7 +64,7 @@ poblar_lista()
 
 local input_nombre = builder:get_object('entry_nombre') -- Invoco el objeto entry_nombre de agenda.ui
 local input_numero = builder:get_object('entry_numero') -- Invoco el objeto entry_password de agenda.ui
-local input_lugar  = builder:get_object('entry_lugar')   -- Invoco el objeto entry_lugar de agenda.ui
+local input_lugar  = builder:get_object('entry_lugar')  -- Invoco el objeto entry_lugar de agenda.ui
 
 local function insert_data()
 	db:open()
