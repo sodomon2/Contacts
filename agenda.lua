@@ -18,13 +18,13 @@ assert(builder:add_from_file('vistas/agenda.ui'))
 local ui = builder.objects
 
 local login_window = ui.dialog_login
-local main_window = ui.main_window
+local main_window  = ui.main_window
 
-local btn_cancel = builder:get_object('btn_cancel')   -- Invoco el objeto btn_cancel de agenda.ui
-local btn_ok = builder:get_object('btn_ok')           -- Invoco el objeto btn_ok de agenda.ui
+local btn_cancel   = builder:get_object('btn_cancel')     -- Invoco el objeto btn_cancel de agenda.ui
+local btn_ok       = builder:get_object('btn_ok')         -- Invoco el objeto btn_ok de agenda.ui
 
-local input = builder:get_object('entry_user')        -- Invoco el objeto entry_user de agenda.ui
-local password = builder:get_object('entry_password') -- Invoco el objeto entry_password de agenda.ui
+local input        = builder:get_object('entry_user')     -- Invoco el objeto entry_user de agenda.ui
+local password     = builder:get_object('entry_password') -- Invoco el objeto entry_password de agenda.ui
 
 function btn_ok:on_clicked()
 	db:open()
@@ -39,8 +39,8 @@ function btn_ok:on_clicked()
 	end
 end
 
-local btn_add = builder:get_object('btn_registrar') -- Invoco el objeto btn_add de agenda.ui
-local btn_reset = builder:get_object('btn_reset')   -- Invoco el objeto btn_reset de agenda.ui
+local btn_add   = builder:get_object('btn_registrar') -- Invoco el objeto btn_add de agenda.ui
+local btn_reset = builder:get_object('btn_reset')     -- Invoco el objeto btn_reset de agenda.ui
 
 local function poblar_lista()
 	db:open()
@@ -64,7 +64,7 @@ poblar_lista()
 
 local input_nombre = builder:get_object('entry_nombre') -- Invoco el objeto entry_nombre de agenda.ui
 local input_numero = builder:get_object('entry_numero') -- Invoco el objeto entry_password de agenda.ui
-local input_lugar = builder:get_object('entry_lugar')   -- Invoco el objeto entry_lugar de agenda.ui
+local input_lugar  = builder:get_object('entry_lugar')   -- Invoco el objeto entry_lugar de agenda.ui
 
 local function insert_data()
 	db:open()
