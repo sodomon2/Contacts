@@ -2,23 +2,16 @@
 
 Agenda para registro de telefonos en Lua GTK y Sqlite3
 
-Usuario: admin
-contraseña: admin
+## Dependencias
 
-## Instalacion 
+- ![sqlite3](https://www.sqlite.org/download.html)
+- ![lua-lgi](https://github.com/pavouk/lgi/)
 
-1: Creamos el directorio `agenda` en `/usr/share` con el siguiente comando
+### Instalacion
+ejecutar `make db`
 
-`mkdir -p /usr/share/agenda`
+`sudo make install`
 
-2: Abrimos una consola root y ejecutamos los siguientes comandos
-
-Binario `cp -u agenda /usr/bin`
-
-Agenda  `cp -r lib/ vistas/ agenda.lua db.db /usr/share/agenda`
-
-Desktop `cp -u agenda.desktop /usr/share/applications`
-
-### Contactos
+#### Contactos
 
 Gmail: sodomon2@gmail.com
