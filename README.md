@@ -4,13 +4,11 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 
 ## Dependencias
 
-- ![sqlite3](https://www.sqlite.org/download.html)
-- ![lua-lgi](https://github.com/pavouk/lgi/)
+- [sqlite3](https://www.sqlite.org/download.html)
+- [lua-lgi](https://github.com/pavouk/lgi/)
 
 ### Instalacion
-ejecutar `make db`
-
-`sudo make install`
+`make db && sudo make install`
 
 #### Contactos
 
