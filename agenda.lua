@@ -131,7 +131,7 @@ local function insert_user()
 		else
 			input_usuario.text = ""
 			input_contrasena.text = ""
-            label_mensaje.label = "usuario creado correctamente"
+        		label_mensaje.label = "usuario creado correctamente"
 		end
 	else
 		print("error campos vacios")
