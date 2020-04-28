@@ -584,7 +584,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label_mensaje">
+              <object class="GtkLabel" id="mensaje">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
               </object>
