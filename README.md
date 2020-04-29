@@ -2,6 +2,18 @@
 
 Agenda para registro de telefonos en Lua GTK y Sqlite3
 
+# Release v1.0
+
+- [x] keyval integrado (entrar al presionar la tecla return)
+- [x] añadido modulo de registro de usuario
+- [x] añadido el makefile
+- [x] añadido el submodulo de lgi
+
+## Todo
+- [ ] boton limpiar implementado
+- [ ] buscador de contactos implementado
+- [ ] añadido el submodulo de sqlite3 
+
 ## Screenshot
 
 ![registro-de-usuario](screenshot/registro-de-usuario.png) 
