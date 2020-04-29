@@ -1,0 +1,3 @@
+*.gir
+*.typelib
+test_c

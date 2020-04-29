@@ -1,0 +1,3 @@
+[submodule "external/lgi"]
+	path = external/lgi
+	url = https://github.com/pavouk/lgi.git

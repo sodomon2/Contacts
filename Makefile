@@ -13,7 +13,7 @@ all: db
 
 db:
 	$(SQLITE3) $(DB) < $(SCHEMA_DB)
-    
+
 install: 
 	install -m775 $(EXECUTABLE) /usr/bin/
 	mkdir -p /usr/share/agenda
