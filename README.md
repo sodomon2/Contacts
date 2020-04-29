@@ -4,9 +4,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 
 ## Screenshot
 
-![login](screenshot/login.png) ![registro-de-usuario](screenshot/registro-de-usuario.png)
-
-![registro-de-contactos](screenshot/registro-de-contactos.png)
+![registro-de-usuario](screenshot/registro-de-usuario.png) ![registro-de-contactos](screenshot/registro-de-contactos.png) ![login](screenshot/login.png) 
 
 ## Dependencias
 
