@@ -521,6 +521,8 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Escriba un nombre</property>
+                        <property name="margin_left">3</property>
+                        <property name="margin_right">3</property>
                         <property name="margin_bottom">10</property>
                         <property name="label" translatable="yes">Nombre de Usuario:</property>
                         <property name="width_chars">14</property>
@@ -534,6 +536,8 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="margin_left">3</property>
+                        <property name="margin_right">3</property>
                         <property name="margin_bottom">10</property>
                         <property name="label" translatable="yes">Contraseña:</property>
                         <property name="width_chars">14</property>
