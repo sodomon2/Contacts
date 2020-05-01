@@ -31,7 +31,7 @@ local btn_user_cancel = builder:get_object('btn_user_cancel')    -- Invoco el ob
 local input           = builder:get_object('entry_user')         -- Invoco el objeto entry_user de agenda.ui
 local password        = builder:get_object('entry_password')     -- Invoco el objeto entry_password de agenda.ui
 local contactos_view  = builder:get_object('contactos_view')     -- Invoco el objeto entry_password de agenda.ui
-
+local label_usuario   = builder:get_object('label_usuario')      -- Invoco el objeto label_usuario de agenda.ui
 
 local function aceptar()
     db:open()
@@ -42,7 +42,7 @@ local function aceptar()
 		login_window:hide()
 		main_window:show_all()
 	else
-		print('contraseña o usuario incorrecto')
+        label_usuario.label = "contraseña o usuario incorrecto"
 	end
 end 
 
