@@ -29,7 +29,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 - [lua-lgi](https://github.com/pavouk/lgi/)
 
 ### Instalacion
-`make db && sudo make install`
+`make db && make install`
 
 #### Contactos
 
