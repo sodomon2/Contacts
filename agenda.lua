@@ -1,11 +1,11 @@
 #!/usr/bin/env lua5.1
 
-require('lib.middleclass')                  --La libreria middleclassme da soporte a OOP
-funcion         = require('lib.funciones')  --En lib/funciones guardare todas las funciones generales
+require('lib.middleclass')                  -- La libreria middleclassme da soporte a OOP
+funcion         = require('lib.funciones')  -- En lib/funciones guardare todas las funciones generales
 comun           = require('lib.comun')      -- Similar a funciones pero mas comun
 db              = require('lib.db')         -- La super libreria para el acceso a sqlite
 
-local lgi       = require 'lgi'             -- La libreria que me permitirausar GTK
+local lgi       = require 'lgi'             -- La libreria que me permitira usar GTK
 local GObject   = lgi.GObject               -- Parte de lgi
 local Gdk       = lgi.Gdk                   -- parte de lgi
 local GLib      = lgi.GLib                  -- para el treeview
@@ -56,8 +56,8 @@ function ui.entry_password:on_key_release_event(env)
     end
 end
 
-local btn_add   = builder:get_object('btn_registrar') -- Invoco el objeto btn_add de agenda.ui
-local btn_reset = builder:get_object('btn_reset')     -- Invoco el objeto btn_reset de agenda.ui
+local btn_registrar   = builder:get_object('btn_registrar') -- Invoco el objeto btn_registrar de agenda.ui
+local btn_reset       = builder:get_object('btn_reset')     -- Invoco el objeto btn_reset de agenda.ui
 
 local function poblar_lista()
 	db:open()
@@ -134,11 +134,11 @@ local function insert_user()
 			label_mensaje.label = "usuario creado correctamente"
 		end
 	else
-		print("error campos vacios")
+		label_mensaje.label = "error campos vacios"
 	end
 end
 
-function btn_add:on_clicked()
+function btn_registrar:on_clicked()
 	insert_data()
 end
 
