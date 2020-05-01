@@ -20,6 +20,7 @@ local ui = builder.objects
 local login_window    = ui.dialog_login
 local window_user     = ui.window_user
 local main_window     = ui.main_window
+local about_window    = ui.about_window
 
 local btn_cancel      = builder:get_object('btn_cancel')         -- Invoco el objeto btn_cancel de agenda.ui
 local btn_ok          = builder:get_object('btn_ok')             -- Invoco el objeto btn_ok de agenda.ui
@@ -165,6 +166,16 @@ end
 
 function btn_cancel:on_clicked()
 	Gtk.main_quit()
+end
+
+function ui.menu_about:on_clicked()
+    ui.about_window:run()
+    ui.about_window:hide()
+end
+
+function ui.menu_quit_login:on_clicked()
+    main_window:hide()
+    login_window:show_all()
 end
 
 function main_window:on_destroy()
