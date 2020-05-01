@@ -578,6 +578,7 @@
                         <property name="visibility">False</property>
                         <property name="placeholder_text" translatable="yes">Contraseña</property>
                         <property name="input_purpose">password</property>
+                        <signal name="key-release-event" handler="on_key_release_event" swapped="no"/>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>

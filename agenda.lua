@@ -52,7 +52,7 @@ end
 
 function ui.entry_password:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
-      aceptar()
+      aceptar()     
     end
 end
 
@@ -138,6 +138,13 @@ local function insert_user()
 	end
 end
 
+
+function ui.entry_user_contrasena:on_key_release_event(env)
+    if ( env.keyval  == Gdk.KEY_Return ) then
+      insert_user()      
+    end
+end
+
 function btn_registrar:on_clicked()
 	insert_data()
 end
@@ -157,11 +164,6 @@ function btn_user_cancel:on_clicked()
 end
 
 function btn_cancel:on_clicked()
-	Gtk.main_quit()
-end
-
--- que hacer cuando le den cerrar a la ventana
-function login_window:on_destroy()
 	Gtk.main_quit()
 end
 
