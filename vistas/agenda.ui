@@ -9,7 +9,7 @@
     <property name="version">1.0</property>
     <property name="copyright" translatable="yes">Copyright (c) 2020 Diaz Urbaneja Victor Diego Alejandro (Sodomon) </property>
     <property name="comments" translatable="yes">Agenda personal en lua GTK y sqlite</property>
-    <property name="website">sodomon.gitlab.io</property>
+    <property name="website">https://sodomon.gitlab.io/post/agenda-personal-en-lua-gtk-y-sqlite3/</property>
     <property name="website_label" translatable="yes">Pagina Principal</property>
     <property name="authors">Díaz Urbaneja Víctor Diego Alejandro(Sodomon) &lt;sodomon2@gmail.com&gt;</property>
     <property name="logo_icon_name">user</property>
