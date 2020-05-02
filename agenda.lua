@@ -42,16 +42,16 @@ local function aceptar()
 	local sql = "select id_usuario from usuarios where usuario = '"..input.text.."' and contrasena = '"..password.text.."'"
 	local result = db:get_var(sql)
 	if result then
-        Notify.init("Mensaje de bienvenida")
+		Notify.init("Mensaje de bienvenida")
 
-        message = Notify.Notification.new
-        welcome = message ("Agenda Personal","Bienvenido " .. input.text,"user")
-        welcome:show()
+		message = Notify.Notification.new
+		welcome = message ("Agenda Personal","Bienvenido " .. input.text,"user")
+		welcome:show()
 
 		login_window:hide()
 		main_window:show_all()
 	else
-        label_usuario.label = "contraseña o usuario incorrecto"
+		label_usuario.label = "contraseña o usuario incorrecto"
 	end
 end 
 
