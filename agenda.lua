@@ -9,6 +9,7 @@ local lgi       = require 'lgi'             -- La libreria que me permitira usar
 local GObject   = lgi.GObject               -- Parte de lgi
 local Gdk       = lgi.Gdk                   -- parte de lgi
 local GLib      = lgi.GLib                  -- para el treeview
+local Notify    = lgi.Notify                -- la libreria que me permite hacer notificaciones de escritorio
 local Gtk       = lgi.require('Gtk', '3.0') -- El objeto GTK
 
 local assert    = lgi.assert
@@ -41,7 +42,12 @@ local function aceptar()
 	local sql = "select id_usuario from usuarios where usuario = '"..input.text.."' and contrasena = '"..password.text.."'"
 	local result = db:get_var(sql)
 	if result then
-		print("Bienvenidos")
+        Notify.init("Mensaje de bienvenida")
+
+        message = Notify.Notification.new
+        welcome = message ("Agenda Personal","Bienvenido " .. input.text,"user")
+        welcome:show()
+
 		login_window:hide()
 		main_window:show_all()
 	else

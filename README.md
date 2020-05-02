@@ -17,6 +17,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 - [ ] boton limpiar implementado
 - [ ] buscador de contactos implementado
 - [ ] añadido el submodulo de sqlite3 
+- [ ] añadido el submodulo de libnotify
 
 ## Screenshot
 
@@ -31,6 +32,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 
 - [sqlite3](https://www.sqlite.org/download.html)
 - [lua-lgi](https://github.com/pavouk/lgi/)
+- [libnotify](https://github.com/GNOME/libnotify)
 
 ### Instalacion
 `make db && make install`
