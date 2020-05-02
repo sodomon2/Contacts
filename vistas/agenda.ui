@@ -516,7 +516,7 @@ necessary.  Here is a sample; alter the names:
 That's all there is to it!
 </property>
     <property name="authors">Díaz Urbaneja Víctor Diego Alejandro(Sodomon) &lt;sodomon2@gmail.com&gt;</property>
-    <property name="logo_icon_name">user</property>
+    <property name="logo">../img/users.png</property>
     <child type="titlebar">
       <object class="GtkHeaderBar">
         <property name="visible">True</property>
@@ -547,7 +547,7 @@ That's all there is to it!
     </child>
   </object>
   <object class="GtkStatusIcon" id="agenda">
-    <property name="icon_name">user</property>
+    <property name="pixbuf">../img/users.png</property>
     <property name="has_tooltip">True</property>
     <property name="tooltip_text" translatable="yes">Agenda Personal</property>
     <signal name="activate" handler="on_activate" swapped="no"/>
