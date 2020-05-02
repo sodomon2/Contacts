@@ -13,7 +13,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 - [x] keyval hablitilado en modulo de registro de usuarios
 - [x] dialogo de ayuda
 - [x] tray icon
-- [ ] notificaciones
+- [x] notificaciones
 - [ ] boton limpiar implementado
 - [ ] buscador de contactos implementado
 - [ ] añadido el submodulo de sqlite3 
