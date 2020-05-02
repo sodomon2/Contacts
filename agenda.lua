@@ -22,6 +22,8 @@ local window_user     = ui.window_user
 local main_window     = ui.main_window
 local about_window    = ui.about_window
 
+local agenda          = builder:get_object('agenda')             -- Invoco el objeto agenda de agenda.ui
+
 local btn_cancel      = builder:get_object('btn_cancel')         -- Invoco el objeto btn_cancel de agenda.ui
 local btn_ok          = builder:get_object('btn_ok')             -- Invoco el objeto btn_ok de agenda.ui
 
@@ -139,11 +141,25 @@ local function insert_user()
 	end
 end
 
-
 function ui.entry_user_contrasena:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
       insert_user()      
     end
+end
+
+local visible = false
+
+function trayicon()
+	visible = not visible
+	if visible then
+		ui.dialog_login:show_all()
+	else
+		ui.dialog_login:hide()
+	end
+end
+
+function agenda:on_activate()
+	trayicon()
 end
 
 function btn_registrar:on_clicked()
