@@ -1,3 +1,6 @@
 [submodule "external/lgi"]
 	path = external/lgi
 	url = https://github.com/pavouk/lgi.git
+[submodule "external/libnotify"]
+	path = external/libnotify
+	url = https://github.com/GNOME/libnotify.git
