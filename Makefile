@@ -12,7 +12,6 @@ EXECUTABLE  = ./agenda
 all: db
 
 db:
-	rm -r $(DB)
 	$(SQLITE3) $(DB) < $(SCHEMA_DB)
 
 install: 
