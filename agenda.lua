@@ -1,6 +1,6 @@
 #!/usr/bin/env lua5.1
 
-require('lib.middleclass')                  -- La libreria middleclassme da soporte a OOP
+require('lib.middleclass')                  -- La libreria middleclass me da soporte a OOP
 funcion         = require('lib.funciones')  -- En lib/funciones guardare todas las funciones generales
 comun           = require('lib.comun')      -- Similar a funciones pero mas comun
 db              = require('lib.db')         -- La super libreria para el acceso a sqlite
