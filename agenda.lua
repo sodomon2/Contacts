@@ -105,6 +105,12 @@ local function insert_data()
 			input_numero.text = ""
 			input_nombre.text = ""
 			input_lugar.text = ""
+           
+            Notify.init("Contactos")
+            
+            message = Notify.Notification.new
+            welcome = message ("Agenda Personal","Contacto añadido correctamente","user")
+            welcome:show()
 		end
 	else
 		print("error campos vacios")
