@@ -108,9 +108,9 @@ local function insert_data()
            
 			Notify.init("Contactos")
             
-			message = Notify.Notification.new
-			welcome = message ("Agenda Personal","Contacto añadido correctamente","user")
-			welcome:show()
+			message_contactos = Notify.Notification.new
+			contacto          = message_contactos ("Agenda Personal","Contacto añadido correctamente","user")
+			contacto:show()
 		end
 	else
 		print("error campos vacios")
