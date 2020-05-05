@@ -1,5 +1,6 @@
 PRAGMA foreign_keys = on;
 
+drop table if exists usuarios;
 CREATE TABLE usuarios(
     id_usuario		integer primary key AUTOINCREMENT,
     usuario		varchar(16) not null,       -- usuario es un string
@@ -8,6 +9,7 @@ CREATE TABLE usuarios(
 );
 
 CREATE UNIQUE INDEX usuarios_nombre on usuarios (usuario);
+drop table if exists contactos;
 CREATE TABLE contactos(
     id_contacto		integer primary key AUTOINCREMENT,
     nombre		varchar(16) not null,     -- nombre es un string
