@@ -731,6 +731,11 @@ That's all there is to it!
       </object>
     </child>
   </object>
+  <object class="GtkImage" id="img_contactos">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-add</property>
+  </object>
   <object class="GtkListStore" id="lista_contactos">
     <columns>
       <!-- column-name id -->
@@ -881,43 +886,14 @@ That's all there is to it!
             </child>
             <child>
               <object class="GtkButton" id="btn_registrar">
+                <property name="label" translatable="yes">Registrar</property>
                 <property name="width_request">33</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="image">img_contactos</property>
+                <property name="image_position">right</property>
                 <signal name="clicked" handler="on_clicked" swapped="no"/>
-                <child>
-                  <object class="GtkGrid" id="btn_add">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="column_spacing">4</property>
-                    <child>
-                      <object class="GtkImage">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">4</property>
-                        <property name="stock">gtk-add</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_left">40</property>
-                        <property name="margin_top">4</property>
-                        <property name="label" translatable="yes">Registrar</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                  </object>
-                </child>
               </object>
               <packing>
                 <property name="left_attach">1</property>
