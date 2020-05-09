@@ -4,10 +4,11 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkAboutDialog" id="about_window">
     <property name="can_focus">False</property>
+    <property name="icon">../img/users.png</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">Agenda Personal</property>
     <property name="version">1.0</property>
-    <property name="copyright" translatable="yes">Copyright (c) 2020 Diaz Urbaneja Victor Diego Alejandro (Sodomon) </property>
+    <property name="copyright" translatable="yes">Copyright (c) 2020 Diaz Urbaneja Victor Diego Alejandro </property>
     <property name="comments" translatable="yes">Agenda personal en lua GTK y sqlite</property>
     <property name="website">https://github.com/sodomon2/agenda_personal</property>
     <property name="website_label" translatable="yes">Pagina Principal</property>
@@ -556,6 +557,7 @@ That's all there is to it!
   <object class="GtkDialog" id="dialog_login">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
+    <property name="icon">../img/users.png</property>
     <property name="type_hint">dialog</property>
     <property name="gravity">center</property>
     <child type="titlebar">
@@ -813,6 +815,7 @@ That's all there is to it!
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
+    <property name="icon">../img/users.png</property>
     <property name="gravity">center</property>
     <child type="titlebar">
       <object class="GtkHeaderBar">
@@ -1049,6 +1052,7 @@ That's all there is to it!
   <object class="GtkDialog" id="window_user">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
+    <property name="icon">../img/users.png</property>
     <property name="type_hint">dialog</property>
     <property name="gravity">center</property>
     <child type="titlebar">
