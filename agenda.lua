@@ -160,11 +160,15 @@ local visible = false
 
 function trayicon()
 	visible = not visible
-	if visible then
-		ui.dialog_login:show_all()
-	else
-		ui.dialog_login:hide()
-	end
+    if main_window.is_active then
+        ui.dialog_login:hide()
+    else
+        if visible then
+            ui.dialog_login:show_all()
+        else
+            ui.dialog_login:hide()
+        end
+    end 
 end
 
 function agenda:on_activate()
