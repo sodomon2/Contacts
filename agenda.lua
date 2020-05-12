@@ -37,14 +37,14 @@ local password        = builder:get_object('entry_password')     -- Invoco el ob
 local contactos_view  = builder:get_object('contactos_view')     -- Invoco el objeto entry_password de agenda.ui
 local label_usuario   = builder:get_object('label_usuario')      -- Invoco el objeto label_usuario de agenda.ui
 
+Notify.init("Inicio las notificaciones")
+message = Notify.Notification.new
+
 local function aceptar()
     db:open()
 	local sql = "select id_usuario from usuarios where usuario = '"..input.text.."' and contrasena = '"..password.text.."'"
 	local result = db:get_var(sql)
 	if result then
-		Notify.init("Mensaje de bienvenida")
-
-		message = Notify.Notification.new
 		welcome = message ("Agenda Personal","Bienvenido " .. input.text,"user")
 		welcome:show()
 
@@ -104,12 +104,9 @@ local function insert_data()
 			poblar_lista()
 			input_numero.text = ""
 			input_nombre.text = ""
-			input_lugar.text = ""
+			input_lugar.text  = ""
            
-			Notify.init("Contactos")
-            
-			message_contactos = Notify.Notification.new
-			contacto          = message_contactos ("Agenda Personal","Contacto añadido correctamente","user")
+			contacto          = message ("Agenda Personal","Contacto añadido correctamente","user")
 			contacto:show()
 		end
 	else
