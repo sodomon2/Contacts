@@ -1071,7 +1071,7 @@ That's all there is to it!
         <child internal-child="action_area">
           <object class="GtkButtonBox">
             <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
+            <property name="layout_style">expand</property>
             <child>
               <object class="GtkButton" id="btn_user_ok">
                 <property name="label" translatable="yes">Crear Usuario</property>
