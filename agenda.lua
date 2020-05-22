@@ -175,7 +175,8 @@ function agenda:on_activate()
 	trayicon()
 end
 
-function menu(event_button, event_time)
+-- Create Menu
+function create_menu(event_button, event_time)
     menu = Gtk.Menu {
         Gtk.ImageMenuItem {
             label = "Salir Agenda",
@@ -189,7 +190,7 @@ function menu(event_button, event_time)
 end
 
 function agenda:on_popup_menu(ev, time)
-    menu(ev, time)
+    create_menu(ev, time)
 end
 
 function btn_registrar:on_clicked()
