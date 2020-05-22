@@ -175,7 +175,6 @@ function agenda:on_activate()
 	trayicon()
 end
 
--- Create Menu
 function create_menu(event_button, event_time)
     menu = Gtk.Menu {
         Gtk.ImageMenuItem {
