@@ -1,5 +1,6 @@
 #!/usr/bin/env lua5.1
 
+require('languages.init')					-- esta es la libreria de lenguajes
 require('lib.middleclass')                  -- La libreria middleclass me da soporte a OOP
 funcion         = require('lib.funciones')  -- En lib/funciones guardare todas las funciones generales
 comun           = require('lib.comun')      -- Similar a funciones pero mas comun
@@ -39,6 +40,8 @@ local label_usuario   = builder:get_object('label_usuario')      -- Invoco el ob
 
 Notify.init("Inicio las notificaciones")
 message = Notify.Notification.new
+
+setLang("es_es")
 
 local function aceptar()
     db:open()
