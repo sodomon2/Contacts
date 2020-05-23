@@ -17,6 +17,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 - [ ] boton limpiar implementado
 - [ ] buscador de contactos implementado
 - [ ] añadido el submodulo de sqlite3 
+- [ ] traducciones
 - [x] añadido el submodulo de libnotify
 
 ## Screenshot
