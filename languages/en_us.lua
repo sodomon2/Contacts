@@ -12,6 +12,7 @@ lang = {
   user_create          = "Create a user";
   exist_user           = "User exist";
   error                = "Error";
+  user_valid           = "@TODO";
 
   about                = "About";
   login                = "Please Identifiquer";
