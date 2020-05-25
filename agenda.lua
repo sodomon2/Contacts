@@ -22,10 +22,10 @@ local ui = builder.objects
 setLang("en_us")
 
 -- label
-builder:get_object('label_user').label						  = getLINE("user")
-builder:get_object('label_password').label 	     			  = getLINE("password")
-builder:get_object('label_create_user').label 	  			  = getLINE("create_user")
-builder:get_object('label_create_password').label 			  = getLINE("create_password")
+builder:get_object('label_user').label						= getLINE("user")
+builder:get_object('label_password').label 	     		  = getLINE("password")
+builder:get_object('label_create_user').label 	  		  = getLINE("create_user")
+builder:get_object('label_create_password').label 			= getLINE("create_password")
 
 --botones
 builder:get_object('btn_ok').label          				  = getLINE("acept")
@@ -36,14 +36,14 @@ builder:get_object('btn_registrar').label   				  = getLINE("register")
 builder:get_object('btn_reset').label       				  = getLINE("clear")
 
 -- entry
-builder:get_object('entry_user').placeholder_text     		  = getLINE("user_entry")
-builder:get_object('entry_password').placeholder_text 		  = getLINE("pass")
+builder:get_object('entry_user').placeholder_text     		= getLINE("user_entry")
+builder:get_object('entry_password').placeholder_text 		= getLINE("pass")
 builder:get_object('entry_user_usuario').placeholder_text     = getLINE("user_entry")
 builder:get_object('entry_user_contrasena').placeholder_text  = getLINE("pass")
 
-builder:get_object('entry_nombre').placeholder_text  		  = getLINE("name")
-builder:get_object('entry_numero').placeholder_text  	      = getLINE("number")
-builder:get_object('entry_lugar').placeholder_text   	      = getLINE("zone")
+builder:get_object('entry_nombre').placeholder_text  		 = getLINE("name")
+builder:get_object('entry_numero').placeholder_text  	     = getLINE("number")
+builder:get_object('entry_lugar').placeholder_text   	     = getLINE("country")
 builder:get_object('entry_busqueda').placeholder_text   	  = getLINE("insert")
 
 -- windows
@@ -53,8 +53,8 @@ builder:get_object('about_window').title  					  = getLINE("about")
 builder:get_object('main_window').title   					  = getLINE("window")
 
 -- menus
-builder:get_object('menu_quit_login').text  				  = getLINE("exit")
-builder:get_object('menu_about').text       				  = getLINE("about")
+builder:get_object('menu_quit_login').text  				    = getLINE("exit")
+builder:get_object('menu_about').text       				    = getLINE("about")
 
 local agenda          = builder:get_object('agenda')             -- Invoco el objeto agenda de agenda.ui
 
@@ -76,7 +76,7 @@ local function aceptar()
 	else
 		ui.label_usuario.label = getLINE ("user_menssage")
 	end
-end 
+end
 
 function ui.btn_ok:on_clicked()
     aceptar()
@@ -164,7 +164,7 @@ end
 
 function ui.entry_user_contrasena:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
-      insert_user()      
+      insert_user()
     end
 end
 
@@ -180,7 +180,7 @@ function trayicon()
         else
             ui.dialog_login:hide()
         end
-    end 
+    end
 end
 
 function agenda:on_activate()

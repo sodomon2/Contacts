@@ -24,7 +24,7 @@ lang = {
 
   name                 = "Name";
   number               = "Number";
-  zone                 = "Zone";
+  country              = "Country";
   insert               = "insert ";
   exit                 = "Exit to login";
   close                = "Exit Agenda";
