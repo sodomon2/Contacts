@@ -155,7 +155,7 @@ local function insert_user()
 		else
 			ui.entry_user_usuario.text = ""
 			ui.entry_user_contrasena.text = ""
-			ui.label_mensaje.label = getLINE("usuario creado correctamente")
+			ui.label_mensaje.label = getLINE("user_valid")
 		end
 	else
 		ui.label_mensaje.label = getLINE("error")
