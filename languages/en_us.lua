@@ -2,7 +2,7 @@ lang = {
   user                 = "User :";
   password             = "Password :";
   user_menssage        = "password or user incorrect";
-  acept                = "Acept";
+  acept                = "Accept";
   cancel               = "Cancel";
   pass                 = "Password";
   user_entry           = "User";
@@ -12,7 +12,7 @@ lang = {
   user_create          = "Create a user";
   exist_user           = "User exist";
   error                = "Error";
-  user_valid           = "@TODO";
+  user_valid           = "successful user";
 
   about                = "About";
   login                = "Please Identifiquer";
@@ -25,8 +25,8 @@ lang = {
   name                 = "Name";
   number               = "Number";
   country              = "Country";
-  insert               = "insert ";
-  exit                 = "Exit to login";
-  close                = "Exit Agenda";
+  insert               = "insert your search";
+  exit                 = "Log Out";
+  close                = "Exit Personal Diay";
 }
 return lang
