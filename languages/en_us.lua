@@ -11,7 +11,7 @@ lang = {
   create_password      = "Password :";
   user_create          = "Create a user";
   exist_user           = "User exist";
-  error                = "Error";
+  error                = "Error empty fields";
   user_valid           = "successful user";
 
   about                = "About";
