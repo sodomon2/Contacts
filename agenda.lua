@@ -28,7 +28,7 @@ builder:get_object('label_create_user').label 	  		  = getLINE("create_user")
 builder:get_object('label_create_password').label 			= getLINE("create_password")
 
 --botones
-builder:get_object('btn_ok').label          				  = getLINE("acept")
+builder:get_object('btn_ok').label          				  = getLINE("accept")
 builder:get_object('btn_cancel').label      				  = getLINE("cancel")
 builder:get_object('btn_user_ok').label     				  = getLINE("user_create")
 builder:get_object('btn_user_cancel').label 			      = getLINE("cancel")
