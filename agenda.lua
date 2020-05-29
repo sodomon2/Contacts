@@ -1,6 +1,7 @@
 #!/usr/bin/env lua5.1
 
 require('lib.middleclass')                  -- La libreria middleclass me da soporte a OOP
+require('languages.init')					-- la libreria de lenguajes
 funcion         = require('lib.funciones')  -- En lib/funciones guardare todas las funciones generales
 comun           = require('lib.comun')      -- Similar a funciones pero mas comun
 db              = require('lib.db')         -- La super libreria para el acceso a sqlite
@@ -18,55 +19,74 @@ local builder   = Gtk.Builder()
 assert(builder:add_from_file('vistas/agenda.ui'))
 local ui = builder.objects
 
-local login_window    = ui.dialog_login
-local window_user     = ui.window_user
-local main_window     = ui.main_window
-local about_window    = ui.about_window
+setLang("en_us")
+
+-- label
+builder:get_object('label_user').label						= getLINE("user")
+builder:get_object('label_password').label 	     		  = getLINE("password")
+builder:get_object('label_create_user').label 	  		  = getLINE("create_user")
+builder:get_object('label_create_password').label 			= getLINE("create_password")
+
+--botones
+builder:get_object('btn_ok').label          				  = getLINE("accept")
+builder:get_object('btn_cancel').label      				  = getLINE("cancel")
+builder:get_object('btn_user_ok').label     				  = getLINE("user_create")
+builder:get_object('btn_user_cancel').label 			      = getLINE("cancel")
+builder:get_object('btn_registrar').label   				  = getLINE("register")
+builder:get_object('btn_reset').label       				  = getLINE("clear")
+
+-- entry
+builder:get_object('entry_user').placeholder_text     		= getLINE("user_entry")
+builder:get_object('entry_password').placeholder_text 		= getLINE("pass")
+builder:get_object('entry_user_usuario').placeholder_text     = getLINE("user_entry")
+builder:get_object('entry_user_contrasena').placeholder_text  = getLINE("pass")
+
+builder:get_object('entry_nombre').placeholder_text  		 = getLINE("name")
+builder:get_object('entry_numero').placeholder_text  	     = getLINE("number")
+builder:get_object('entry_lugar').placeholder_text   	     = getLINE("country")
+builder:get_object('entry_busqueda').placeholder_text   	  = getLINE("insert")
+
+-- windows
+builder:get_object('dialog_login').title  					  = getLINE("login")
+builder:get_object('window_user').title   				      = getLINE("user_window")
+builder:get_object('about_window').title  					  = getLINE("about")
+builder:get_object('main_window').title   					  = getLINE("window")
+
+-- menus
+builder:get_object('menu_quit_login').text  				    = getLINE("exit")
+builder:get_object('menu_about').text       				    = getLINE("about")
 
 local agenda          = builder:get_object('agenda')             -- Invoco el objeto agenda de agenda.ui
 
-local btn_cancel      = builder:get_object('btn_cancel')         -- Invoco el objeto btn_cancel de agenda.ui
-local btn_ok          = builder:get_object('btn_ok')             -- Invoco el objeto btn_ok de agenda.ui
-
-local btn_user        = builder:get_object('btn_user')           -- Invoco el objeto btn_user de agenda.ui
-local btn_user_ok     = builder:get_object('btn_user_ok')        -- Invoco el objeto btn_user_ok de agenda.ui
-local btn_user_cancel = builder:get_object('btn_user_cancel')    -- Invoco el objeto btn_user_cancel de agenda.ui
-
-local input           = builder:get_object('entry_user')         -- Invoco el objeto entry_user de agenda.ui
-local password        = builder:get_object('entry_password')     -- Invoco el objeto entry_password de agenda.ui
 local contactos_view  = builder:get_object('contactos_view')     -- Invoco el objeto entry_password de agenda.ui
-local label_usuario   = builder:get_object('label_usuario')      -- Invoco el objeto label_usuario de agenda.ui
 
-Notify.init("Inicio las notificaciones")
+Notify.init("init")
 message = Notify.Notification.new
 
 local function aceptar()
     db:open()
-	local sql = "select id_usuario from usuarios where usuario = '"..input.text.."' and contrasena = '"..password.text.."'"
+	local sql = "select id_usuario from usuarios where usuario = '"..ui.entry_user.text.."' and contrasena = '"..ui.entry_password.text.."'"
 	local result = db:get_var(sql)
 	if result then
-		welcome = message ("Agenda Personal","Bienvenido " .. input.text,"user")
+		welcome = message ("Agenda Personal","Bienvenido " .. ui.entry_user.text,"user")
 		welcome:show()
 
-		login_window:hide()
-		main_window:show_all()
+		ui.dialog_login:hide()
+		ui.main_window:show_all()
 	else
-		label_usuario.label = "contraseña o usuario incorrecto"
+		ui.label_usuario.label = getLINE ("user_menssage")
 	end
-end 
+end
 
-function btn_ok:on_clicked()
+function ui.btn_ok:on_clicked()
     aceptar()
 end
 
 function ui.entry_password:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
-      aceptar()     
+      aceptar()
     end
 end
-
-local btn_registrar   = builder:get_object('btn_registrar') -- Invoco el objeto btn_registrar de agenda.ui
-local btn_reset       = builder:get_object('btn_reset')     -- Invoco el objeto btn_reset de agenda.ui
 
 local function poblar_lista()
 	db:open()
@@ -88,25 +108,21 @@ end
 
 poblar_lista()
 
-local input_nombre = builder:get_object('entry_nombre') -- Invoco el objeto entry_nombre de agenda.ui
-local input_numero = builder:get_object('entry_numero') -- Invoco el objeto entry_numero de agenda.ui
-local input_lugar  = builder:get_object('entry_lugar')  -- Invoco el objeto entry_lugar de agenda.ui
-
 local function insert_data()
 	db:open()
-	local sql = "insert into contactos(nombre,numero,lugar) values('"..input_nombre.text.."','"..input_numero.text.."','"..input_lugar.text .."')"
-	local _numero = tonumber(input_numero.text)
-	if input_nombre ~= "" and _numero ~= "" and input_lugar.text ~= "" then
+	local sql = "insert into contactos(nombre,numero,lugar) values('"..ui.entry_nombre.text.."','"..ui.entry_numero.text.."','"..ui.entry_lugar.text .."')"
+	local _numero = tonumber(ui.entry_numero.text)
+	if ui.entry_nombre.text ~= "" and _numero ~= "" and ui.entry_lugar.text ~= "" then
 		if (db:query(sql) == false) then
 			print("error al insertar los datos")
 			print(sql)
 		else
 			poblar_lista()
-			input_numero.text = ""
-			input_nombre.text = ""
-			input_lugar.text  = ""
-           
-			contacto          = message ("Agenda Personal","Contacto añadido correctamente","user")
+			ui.entry_numero.text = ""
+			ui.entry_nombre.text = ""
+			ui.entry_lugar.text  = ""
+
+			contacto             = message ("Agenda Personal","Contacto añadido correctamente","user")
 			contacto:show()
 		end
 	else
@@ -125,34 +141,30 @@ local function user_exist(user)
     end
 end
 
-local input_usuario    = builder:get_object('entry_user_usuario')    -- Invoco el objeto entry_user_user de agenda.ui
-local input_contrasena = builder:get_object('entry_user_contrasena') -- Invoco el objeto entry_user_contrasena de agenda.ui
-local label_mensaje    = builder:get_object('label_mensaje')         -- Invoco el objeto label_mensaje de agenda.ui
-
 local function insert_user()
 	db:open()
-	local sql = "insert into usuarios(usuario,contrasena,estatus) values('"..input_usuario.text.."','"..input_contrasena.text.."','t')"
-	if input_usuario.text ~= "" and input_contrasena.text ~= "" then
-        if (user_exist(input_usuario.text) == true )then
-            label_mensaje.label = "el usuario existe"
+	local sql = "insert into usuarios(usuario,contrasena,estatus) values('"..ui.entry_user_usuario.text.."','"..ui.entry_user_contrasena.text.."','t')"
+	if ui.entry_user_usuario.text ~= "" and ui.entry_user_contrasena.text ~= "" then
+        if (user_exist(ui.entry_user_usuario.text) == true )then
+            ui.label_mensaje.label = getLINE ("exist_user")
             return false
         end
 		if (db:query(sql) == false) then
 			print("error al insertar los datos")
 			print(sql)
 		else
-			input_usuario.text = ""
-			input_contrasena.text = ""
-			label_mensaje.label = "usuario creado correctamente"
+			ui.entry_user_usuario.text = ""
+			ui.entry_user_contrasena.text = ""
+			ui.label_mensaje.label = getLINE("user_valid")
 		end
 	else
-		label_mensaje.label = "error campos vacios"
+		ui.label_mensaje.label = getLINE("error")
 	end
 end
 
 function ui.entry_user_contrasena:on_key_release_event(env)
     if ( env.keyval  == Gdk.KEY_Return ) then
-      insert_user()      
+      insert_user()
     end
 end
 
@@ -160,7 +172,7 @@ local visible = false
 
 function trayicon()
 	visible = not visible
-    if main_window.is_active then
+    if ui.main_window.is_active then
         ui.dialog_login:hide()
     else
         if visible then
@@ -168,7 +180,7 @@ function trayicon()
         else
             ui.dialog_login:hide()
         end
-    end 
+    end
 end
 
 function agenda:on_activate()
@@ -178,7 +190,7 @@ end
 function create_menu(event_button, event_time)
     menu = Gtk.Menu {
         Gtk.ImageMenuItem {
-            label = "Salir Agenda",
+            label = getLINE("close"),
             on_activate = function()
                 Gtk.main_quit()
             end
@@ -192,25 +204,25 @@ function agenda:on_popup_menu(ev, time)
     create_menu(ev, time)
 end
 
-function btn_registrar:on_clicked()
+function ui.btn_registrar:on_clicked()
 	insert_data()
 end
 
-function btn_user_ok:on_clicked()
+function ui.btn_user_ok:on_clicked()
 	insert_user()
 end
 
-function btn_user:on_clicked()
+function ui.btn_user:on_clicked()
     ui.window_user:show_all()
     ui.dialog_login:hide()
 end
 
-function btn_user_cancel:on_clicked()
+function ui.btn_user_cancel:on_clicked()
 	ui.dialog_login:show_all()
     ui.window_user:hide()
 end
 
-function btn_cancel:on_clicked()
+function ui.btn_cancel:on_clicked()
 	Gtk.main_quit()
 end
 
@@ -220,14 +232,14 @@ function ui.menu_about:on_clicked()
 end
 
 function ui.menu_quit_login:on_clicked()
-    main_window:hide()
-    login_window:show_all()
+    ui.main_window:hide()
+    ui.dialog_login:show_all()
 end
 
-function main_window:on_destroy()
+function ui.main_window:on_destroy()
 	Gtk.main_quit()
 end
 
 -- Show window and start the loop.
-login_window:show_all()
+ui.dialog_login:show_all()
 Gtk.main()

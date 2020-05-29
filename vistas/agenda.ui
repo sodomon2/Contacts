@@ -565,7 +565,6 @@ That's all there is to it!
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="title">Por favor identifiquese</property>
-        <property name="subtitle">Usuario y Contraseña</property>
         <child>
           <object class="GtkButton" id="btn_user">
             <property name="visible">True</property>
@@ -645,7 +644,7 @@ That's all there is to it!
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkLabel">
+                      <object class="GtkLabel" id="label_user">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Escriba un nombre</property>
@@ -659,7 +658,7 @@ That's all there is to it!
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel">
+                      <object class="GtkLabel" id="label_password">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="margin_bottom">10</property>
@@ -822,7 +821,6 @@ That's all there is to it!
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="title">Agenda Personal</property>
-        <property name="subtitle">Numeros de telefonos</property>
         <property name="show_close_button">True</property>
         <child>
           <object class="GtkMenuButton" id="menu_popover">
@@ -918,7 +916,7 @@ That's all there is to it!
             <property name="margin_bottom">7</property>
             <property name="column_spacing">2</property>
             <child>
-              <object class="GtkSearchEntry">
+              <object class="GtkSearchEntry" id="entry_busqueda">
                 <property name="width_request">253</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -1060,7 +1058,6 @@ That's all there is to it!
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="title">Crear Usuario</property>
-        <property name="subtitle">Usuario y Contraseña</property>
       </object>
     </child>
     <child internal-child="vbox">
@@ -1124,7 +1121,7 @@ That's all there is to it!
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkLabel">
+                      <object class="GtkLabel" id="label_create_user">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="tooltip_text" translatable="yes">Escriba un nombre</property>
@@ -1140,7 +1137,7 @@ That's all there is to it!
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel">
+                      <object class="GtkLabel" id="label_create_password">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="margin_left">3</property>
