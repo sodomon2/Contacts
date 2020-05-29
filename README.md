@@ -17,7 +17,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 - [ ] boton limpiar implementado
 - [ ] buscador de contactos implementado
 - [ ] añadido el submodulo de sqlite3 
-- [ ] traducciones [WIP](https://github.com/sodomon2/agenda_personal/tree/lang) 
+- [x] traducciones
 - [x] añadido el submodulo de libnotify
 
 ## Screenshot
