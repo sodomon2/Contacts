@@ -60,16 +60,19 @@ local agenda          = builder:get_object('agenda')             -- Invoco el ob
 
 local contactos_view  = builder:get_object('contactos_view')     -- Invoco el objeto entry_password de agenda.ui
 
-Notify.init("init")
-message = Notify.Notification.new
+local function notification(title,subtitle,msg,img)
+    Notify.init("init")
+    message = Notify.Notification.new
+		msg = message(title,subtitle or nil,msg)
+		msg:show()
+end
 
 local function aceptar()
     db:open()
 	local sql = "select id_usuario from usuarios where usuario = '"..ui.entry_user.text.."' and contrasena = '"..ui.entry_password.text.."'"
 	local result = db:get_var(sql)
 	if result then
-		welcome = message ("Agenda Personal","Bienvenido " .. ui.entry_user.text,"user")
-		welcome:show()
+		notification("Agenda Personal","Bienvenido " .. ui.entry_user.text)
 
 		ui.dialog_login:hide()
 		ui.main_window:show_all()
@@ -122,8 +125,7 @@ local function insert_data()
 			ui.entry_nombre.text = ""
 			ui.entry_lugar.text  = ""
 
-			contacto             = message ("Agenda Personal","Contacto añadido correctamente","user")
-			contacto:show()
+			notification("Agenda Personal","Contacto añadido correctamente")
 		end
 	else
 		print("error campos vacios")
