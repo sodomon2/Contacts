@@ -60,10 +60,10 @@ local agenda          = builder:get_object('agenda')             -- Invoco el ob
 
 local contactos_view  = builder:get_object('contactos_view')     -- Invoco el objeto entry_password de agenda.ui
 
-local function notification(title,subtitle,msg,img)
+local function notification(title,msg)
     Notify.init("init")
     message = Notify.Notification.new
-		msg = message(title,subtitle or nil,msg)
+		msg = message(title,msg)
 		msg:show()
 end
 
