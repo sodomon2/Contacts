@@ -20,15 +20,6 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 - [x] traducciones
 - [x] añadido el submodulo de libnotify
 
-## Screenshot
-
-![registro-de-usuario](screenshot/registro-de-usuario.png) 
-
-![login](screenshot/login.png) 
-
-![registro-de-contactos](screenshot/registro-de-contactos.png) 
-
-
 ## Dependencias
 
 - [sqlite3](https://www.sqlite.org/download.html)

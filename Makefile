@@ -6,8 +6,8 @@
 
 SQLITE3     = /usr/bin/sqlite3
 DB          = ./db.db
-SCHEMA_DB   = ./database/schema.sql
-EXECUTABLE  = ./agenda
+SCHEMA_DB   = ./data/database/schema.sql
+EXECUTABLE  = ./data/agenda
 
 all: db
 
@@ -17,11 +17,11 @@ db:
 install: 
 	install -m775 $(EXECUTABLE) /usr/bin/
 	mkdir -p /usr/share/agenda
-	cp -r lib/ /usr/share/agenda
-	cp -r vistas/ /usr/share/agenda
-	cp -r agenda.lua /usr/share/agenda
+	cp -r src/lib/ /usr/share/agenda
+	cp -r data/agenda.ui /usr/share/agenda
+	cp -r src/init.lua /usr/share/agenda
 	install -m644 $(DB) /usr/share/agenda
-	install -m644 agenda.desktop /usr/share/applications
+	install -m644 data/agenda.desktop /usr/share/applications
    
 uninstall:
 	rm -r /usr/share/agenda/
