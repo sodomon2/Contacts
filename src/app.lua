@@ -43,3 +43,10 @@ function ui.entry_password:on_key_release_event(env)
 	end
 end
 
+function ui.btn_cancel:on_clicked()
+    ui.contacts_expander:set_expanded(false)
+	ui.entry_name.text = ""
+    ui.entry_number.text = ""
+    ui.entry_city.text = ""
+end
+
