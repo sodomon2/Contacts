@@ -26,16 +26,16 @@ poblar_lista()
 
 function insert_data()
 	db:open()
-	local sql = "insert into contactos(nombre,numero,lugar) values('"..ui.entry_nombre.text.."','"..ui.entry_numero.text.."','"..ui.entry_lugar.text .."')"
-	local _numero = tonumber(ui.entry_numero.text)
-	if ui.entry_nombre.text ~= "" and _numero ~= "" and ui.entry_lugar.text ~= "" then
+	local sql = "insert into contactos(nombre,numero,lugar) values('"..ui.entry_name.text.."','"..ui.entry_number.text.."','"..ui.entry_city.text .."')"
+	local _numero = tonumber(ui.entry_number.text)
+	if ui.entry_name.text ~= "" and _numero ~= "" and ui.entry_city.text ~= "" then
 		if (db:query(sql) == false) then
 			print(sql)
 		else
 			poblar_lista()
-			ui.entry_numero.text = ""
-			ui.entry_nombre.text = ""
-			ui.entry_lugar.text  = ""
+			ui.entry_number.text = ""
+			ui.entry_name.text = ""
+			ui.entry_city.text  = ""
 
 			notification("Agenda Personal", "Contacto añadido correctamente")
 		end

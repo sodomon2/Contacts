@@ -18,7 +18,7 @@ Notify    = lgi.require('Notify')
 Gtk       = lgi.require('Gtk', '3.0')
 
 builder   = Gtk.Builder()
-builder:add_from_file('../data/agenda.ui')
+builder:add_from_file('../data/contacts.ui')
 ui = builder.objects
 
 print('Libraries loaded successfully.')

@@ -16,5 +16,5 @@ require ("contact")
 require ("app")
 require ("users")
 
-ui.dialog_login:show_all()
+ui.main_window:show_all()
 Gtk.main()
