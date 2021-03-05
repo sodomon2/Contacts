@@ -8,12 +8,5 @@ require ("contact")
 require ("app")
 require ("users")
 
-function notification(title,msg)
-		Notify.init("init")
-		message = Notify.Notification.new
-		msg = message(title,msg)
-		msg:show()
-end
-
 ui.dialog_login:show_all()
 Gtk.main()

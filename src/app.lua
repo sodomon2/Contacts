@@ -6,6 +6,13 @@
  @date      04.03.2021 22:57:07 -04
 ]]
 
+function notification(title,msg)
+	Notify.init("init")
+	message = Notify.Notification.new
+	msg = message(title,msg)
+    msg:show()
+end
+
 function ui.btn_user_ok:on_clicked()
     insert_user()
 end

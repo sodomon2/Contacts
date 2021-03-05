@@ -17,4 +17,8 @@ GLib      = lgi.require('GLib', '2.0')
 Notify    = lgi.require('Notify')
 Gtk       = lgi.require('Gtk', '3.0')
 
+builder   = Gtk.Builder()
+builder:add_from_file('../data/agenda.ui')
+ui = builder.objects
+
 print('Libraries loaded successfully.')
