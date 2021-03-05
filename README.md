@@ -1,6 +1,6 @@
-# Agenda_Personal
+# Contacts
 
-Agenda para registro de telefonos en Lua GTK y Sqlite3
+ Registro de contactos en Lua, Gtk y Sqlite3
 
 # Release v1.0
 
@@ -22,7 +22,7 @@ Agenda para registro de telefonos en Lua GTK y Sqlite3
 
 ## Dependencias
 
-- [sqlite3](https://www.sqlite.org/download.html)
+- [lua-sqlite3](http://lua.sqlite.org/index.cgi/index)
 - [lua-lgi](https://github.com/pavouk/lgi/)
 - [libnotify](https://github.com/GNOME/libnotify)
 
