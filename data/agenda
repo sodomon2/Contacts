@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd /usr/share/agenda
-lua agenda.lua
+lua init.lua

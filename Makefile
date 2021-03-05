@@ -18,7 +18,7 @@ install:
 	install -m775 $(EXECUTABLE) /usr/bin/
 	mkdir -p /usr/share/agenda
 	cp -r src/lib/ /usr/share/agenda
-	cp -r data/agenda.ui /usr/share/agenda
+	cp -r data/agenda.ui /usr/share/agenda/agenda.ui
 	cp -r src/init.lua /usr/share/agenda
 	install -m644 $(DB) /usr/share/agenda
 	install -m644 data/agenda.desktop /usr/share/applications
