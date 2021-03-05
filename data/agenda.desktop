@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Registros de telefonos
-Type=Application
-Exec=/usr/bin/agenda
-Icon=system-config-users
-Categories=GTK;Office;

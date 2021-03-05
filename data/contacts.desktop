@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Contacts
+Type=Application
+Exec=/usr/bin/contacts
+Icon=contacts.png
+Categories=GTK;Office;
